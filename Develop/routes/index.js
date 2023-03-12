@@ -1,16 +1,8 @@
 const express = require("express");
-const fs = require("fs");
-const {
-  readFromFile,
-  writeToFile,
-  readAndAppend,
-} = require("../helper/helper");
 const app = express();
 
-//app.get request to create side card of notes
+const notesRouter = require("./notes");
 
-//app.get request to bring up old notes
-
-//app.post request to create new notes
+app.use("/notes", notesRouter);
 
 module.exports = app;

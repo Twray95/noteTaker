@@ -1,6 +1,6 @@
 const express = require("express");
-const fs = require("fs");
 const api = require("./routes/index.js");
+const path = require("path");
 
 const PORT = 3001;
 
@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/api", api);
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 //Get route for the home page http://localhost:3001
 app.get("/", (req, res) =>
@@ -20,3 +20,5 @@ app.get("/", (req, res) =>
 app.get("/notes", (req, res) =>
   res.sendFile(path.join(__dirname, "/public/notes.html"))
 );
+
+app.listen(PORT, () => console.log("server online"));
