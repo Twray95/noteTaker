@@ -12,8 +12,6 @@ notes.get("/", (req, res) => {
   readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
 });
 
-//app.get request to bring up old notes
-
 //app.post request to create new notes
 notes.post("/", (req, res) => {
   console.log(req.body);
@@ -33,4 +31,31 @@ notes.post("/", (req, res) => {
   }
 });
 
+notes.delete("/:id", (req, res) => {
+  console.log(req.params.id);
+
+  readFromFile("./db/db.json")
+    .then((data) => JSON.parse(data))
+    .then((array) => {
+      for (i = 0; i < array.length; i++) {
+        if (array[i].id === req.params.id) {
+          array.splice(i, 1);
+          console.log("splice");
+        } else {
+          console.log("no delete this time");
+        }
+      }
+      writeToFile("./db/db.json", array);
+    });
+});
+
 module.exports = notes;
+
+// console.log(array[0].id);
+// array.forEach((element) => {
+//     console.log(element.id);
+//     if (element.id === req.params.id) {
+//       console.log("in delete");
+//       delete element;
+//     }
+//     console.log(array);

@@ -54,14 +54,11 @@ const renderActiveNote = () => {
   hide(saveNoteBtn);
 
   if (activeNote.id) {
-    console.log("if");
     noteTitle.setAttribute("readonly", true);
     noteText.setAttribute("readonly", true);
     noteTitle.value = activeNote.title;
     noteText.value = activeNote.text;
   } else {
-    console.log(activeNote.id);
-    console.log("else");
     noteTitle.removeAttribute("readonly");
     noteText.removeAttribute("readonly");
     noteTitle.value = "";
@@ -84,9 +81,10 @@ const handleNoteSave = () => {
 const handleNoteDelete = (e) => {
   // Prevents the click listener for the list from being called when the button inside of it is clicked
   e.stopPropagation();
-
+  console.log("delete trying");
   const note = e.target;
   const noteId = JSON.parse(note.parentElement.getAttribute("data-note")).id;
+  console.log(noteId);
 
   if (activeNote.id === noteId) {
     activeNote = {};
@@ -102,7 +100,6 @@ const handleNoteDelete = (e) => {
 const handleNoteView = (e) => {
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute("data-note"));
-  console.log("click handleNoteView");
   renderActiveNote();
 };
 

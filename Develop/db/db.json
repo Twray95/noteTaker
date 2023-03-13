@@ -1,17 +1,12 @@
 [
-  {
-    "title": "Test Title",
-    "text": "Test text",
-    "id": "test that id is needed"
-  },
-  {
-    "title": "Test title numero dos",
-    "text": "this is test note content, please ignore. ",
-    "id": "this"
-  },
-  {
-    "title": "test id of note",
-    "text": "testing the id of note",
-    "id": "1d113493-a8a7-4fbb-8f8a-d6fe283337db"
-  }
+    {
+        "title": "Test title numero dos",
+        "text": "this is test note content, please ignore. ",
+        "id": "this"
+    },
+    {
+        "title": "test id of note",
+        "text": "testing the id of note",
+        "id": "1d113493-a8a7-4fbb-8f8a-d6fe283337db"
+    }
 ]
