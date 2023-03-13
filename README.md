@@ -10,11 +10,14 @@ To use the website the user must first click the get started button on the home 
 
 ## Screenshot
 
-This app has not been deployed to a live server. Our teacher said to just get the app functioning for now.
+[Deployment of home page](./images/%3A%20deploy.png)
+[Deployment of /notes page](./images/%3Anotes_deploy.png)
 
 ## Credits
 
 Base code was forked from: https://github.com/coding-boot-camp/miniature-eureka
 Helper functions and some functions from notes.js were either inspired by or copied directly from https://du.bootcampcontent.com/denver-coding-bootcamp/DU-VIRT-FSF-FT-01-2023-U-LOLC.git in 11-Express/01-Activities/28-Stu_Mini-Project.
 
-https://secret-ravine-96849.herokuapp.com/
+## Deployment
+
+[Link to Heroku Deployment](https://secret-ravine-96849.herokuapp.com/)
