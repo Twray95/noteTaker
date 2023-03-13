@@ -5,6 +5,7 @@ const {
   writeToFile,
   readAndAppend,
 } = require("../helper/helper");
+const { v4: uuidv4 } = require("uuid");
 
 //app.get request to create side card of notes
 notes.get("/", (req, res) => {
@@ -22,6 +23,7 @@ notes.post("/", (req, res) => {
     const newNote = {
       title,
       text,
+      id: uuidv4(),
     };
 
     readAndAppend(newNote, "./db/db.json");
