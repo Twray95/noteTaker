@@ -16,3 +16,5 @@ This app has not been deployed to a live server. Our teacher said to just get th
 
 Base code was forked from: https://github.com/coding-boot-camp/miniature-eureka
 Helper functions and some functions from notes.js were either inspired by or copied directly from https://du.bootcampcontent.com/denver-coding-bootcamp/DU-VIRT-FSF-FT-01-2023-U-LOLC.git in 11-Express/01-Activities/28-Stu_Mini-Project.
+
+https://secret-ravine-96849.herokuapp.com/
