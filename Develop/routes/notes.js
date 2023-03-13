@@ -7,6 +7,8 @@ const {
 } = require("../helper/helper");
 const { v4: uuidv4 } = require("uuid");
 
+//I used the code from 28-Stu_Mini-Project as the basis for these request
+
 //app.get request to create side card of notes
 notes.get("/", (req, res) => {
   readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data)));
@@ -31,6 +33,7 @@ notes.post("/", (req, res) => {
   }
 });
 
+//delete request that takes in the id param of the element and removes it from the db.json
 notes.delete("/:id", (req, res) => {
   console.log(req.params.id);
 
@@ -46,16 +49,8 @@ notes.delete("/:id", (req, res) => {
         }
       }
       writeToFile("./db/db.json", array);
-    });
+    })
+    .then((data) => res.json(data));
 });
 
 module.exports = notes;
-
-// console.log(array[0].id);
-// array.forEach((element) => {
-//     console.log(element.id);
-//     if (element.id === req.params.id) {
-//       console.log("in delete");
-//       delete element;
-//     }
-//     console.log(array);
